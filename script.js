@@ -197,6 +197,7 @@ resetBtn.addEventListener("click",()=>{
 })
 
 downloadBtn.addEventListener("click",()=>{
+  if(!image) return
   const link = document.createElement("a")
   link.download = "edited-image.png"
   link.href = imageCanvas.toDataURL()
@@ -383,5 +384,71 @@ const presets = {
 clearBtn.addEventListener("click", ()=>{
   imageCanvas.style.display = "none"
   placeholder.style.display ="block"
+   filters = {
+  brightness: {
+    value: 100,
+    min: 0,
+    max: 200,
+    unit: "%",
+  },
+  contrast: {
+    value: 100,
+    min: 0,
+    max: 200,
+    unit: "%",
+  },
+//   exposure: {
+//     value: 100,
+//     min: 0,
+//     max: 200,
+//     unit: "%",
+//   },
+  saturation: {
+    value: 100,
+    min: 0,
+    max: 200,
+    unit: "%",
+  },
+  hueRotation: {
+    value: 0,
+    min: 0,
+    max: 360,
+    unit: "deg",
+  },
+  blur: {
+    value: 0,
+    min: 0,
+    max: 20,
+    unit: "px",
+  },
+  grayScale: {
+    value: 0,
+    min: 0,
+    max: 100,
+    unit: "%",
+  },
+  sepia: {
+    value: 0,
+    min: 0,
+    max: 100,
+    unit: "%",
+  },
+  opacity: {
+    value: 100,
+    min: 0,
+    max: 100,
+    unit: "%",
+  },
+  invert: {
+    value: 0,
+    min: 0,
+    max: 100,
+    unit: "%",
+  },
+};
+  applyFilters()
+  filterContainer.innerHTML = ""
+  createFilter()
+ 
 })
 
