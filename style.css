@@ -1,0 +1,204 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+}
+html {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: var(--bg-primary-color);
+  color: var(--text-primary-color);
+}
+main {
+  width: 100%;
+}
+main section {
+  width: 100%;
+  padding: var(--padding-2xl);
+  display: flex;
+  gap: var(--gutter-size-2xl);
+}
+
+/* left side */
+.btn {
+  padding: var(--padding-sm) var(--padding-md);
+  border: none;
+  border-radius: var(--border-radius-md);
+  outline: none;
+  background-color: var(--bg-active-color);
+  cursor: pointer;
+}
+#btn {
+  color: var(--bg-primary-color);
+  font: bold;
+}
+#reset-btn {
+  background-color: var(--bg-danger-color);
+  color: var(--text-primary-color);
+}
+#download-btn {
+  background-color: var(--bg-success-color);
+  color: var(--text-primary-color);
+}
+main section .left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gutter-size-lg);
+  width: 70%;
+  /* border:2px solid white */
+}
+
+.top {
+  display: flex;
+  gap: var(--gutter-size-lg);
+  align-items: center;
+  padding: var(--padding-sm);
+  /* border: 2px solid white; */
+}
+
+.bottom {
+  margin: var(--margin-lg);
+  width: 100%;
+  background-color: var(--bg-secondary-color);
+  aspect-ratio: 8/5;
+  padding: var(--padding-2xl);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--border-radius-lg);
+}
+#clear-btn{
+  background-color: var(--bg-active-color);
+}
+
+main section .left .bottom .placeholder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gutter-size-md);
+  opacity: 0.6;
+}
+main section .left .bottom .placeholder i {
+  font-size: 10rem;
+}
+main section .left .bottom .placeholder p {
+  font-size: var(--font-size-2xl);
+}
+/* Right panel wrapper */
+main section .right {
+  padding: var(--padding-2xl);
+  width: 30%;
+  min-height: 100vh;
+  border-radius: var(--border-radius-lg);
+  background-color: var(--bg-secondary-color);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Filter container */
+main section .right .filter {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: var(--margin-md);
+  flex: 1;
+}
+
+/* Heading */
+.right-h2 {
+  margin: 0 0 var(--margin-lg) 0;
+  text-align: center;
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  color: var(--text-primary-color, #333);
+}
+
+/* Range input base */
+main section .right .filter input[type="range"] {
+  width: 100%;
+  height: 1px;
+  /* margin-top: var(--margin-md); */
+  background: var(--bg-primary-color);
+  border-radius: var(--border-radius-md);
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+/* WebKit track */
+main section .right .filter input[type="range"]::-webkit-slider-runnable-track {
+  height: 4px;
+  background-color: var(--bg-primary-color);
+  border-radius: var(--border-radius-md);
+}
+
+/* WebKit thumb */
+main section .right .filter input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #ef4444, #dc2626);
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.4);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: -9px; /* centers thumb on track */
+}
+
+/* Firefox track */
+main section .right .filter input[type="range"]::-moz-range-track {
+  height: 6px;
+  background: var(--bg-primary-color);
+  border-radius: var(--border-radius-md);
+}
+
+/* Firefox thumb */
+main section .right .filter input[type="range"]::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #ef4444, #dc2626);
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.4);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Hover states */
+main section .right .filter input[type="range"]:hover {
+  background: color-mix(in srgb, var(--bg-primary-color) 90%, #ccc);
+}
+
+main section .right .filter input[type="range"]::-webkit-slider-thumb:hover,
+main section .right .filter input[type="range"]::-moz-range-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.6);
+}
+
+main section .right .filter .filters {
+  display: flex;
+  flex-direction: column;
+  gap: var(--margin-md);
+}
+
+/* canvas related code */
+canvas{
+  /* background-color: red; */
+  max-height: 80vh;
+  max-width:90%;
+  display: none;
+}
+
+.presets{
+  display: flex;
+  gap: var(--gutter-size-sm);
+  flex-direction: row;
+  flex-wrap: wrap;
+}
